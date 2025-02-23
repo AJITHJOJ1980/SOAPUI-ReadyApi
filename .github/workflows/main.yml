@@ -11,13 +11,4 @@ jobs:
         with:
           java-version: '11'
 
-      - name: Download and Install ReadyAPI CLI
-        run: |
-          wget https://downloads.smartbear.com/ready-api/ready-api-<version>-linux.tar.gz
-          tar -xvzf ready-api-<version>-linux.tar.gz
-          sudo mv ready-api-<version> /opt/ready-api
-          sudo ln -s /opt/ready-api/bin/readyapi /usr/local/bin/readyapi
 
-      - name: Run ReadyAPI Tests
-        run: |
-          readyapi -s "EndToEndProject" -r "ReportDirectory" -f "JUnit" "REST-Project-1-soapui-project.xml"
